@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Components Form</title>
+  <script defer src="./FormInput.bundle.js"></script>
+  <script defer src="./FormSubmit.bundle.js"></script>
+  <script defer src="./Form-submit.bundle.js"></script>
+</head>
+<body>
+  <div id="root">
+    <form-component id="myForm">
+      <form-input label="Name:" placeholder="Enter your name" type="text" name="name"></form-input>
+      <form-input label="Email:" placeholder="Enter your email" type="email" name="email"></form-input>
+      <form-input label="Message:" placeholder="Enter your message" type="text" name="message"></form-input>
+      <form-submit label="Submit"></form-submit>
+    </form-component>
+  </div>
+
+  <script>
+    document.getElementById('myForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = event.detail;
+      console.log('Form submitted with data:', formData);
+    });
+  </script>
+</body>
+</html>
